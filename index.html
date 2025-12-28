@@ -15,7 +15,6 @@
       --text-secondary: #94a3b8;
       --accent: #38bdf8;
       --accent-hover: #0ea5e9;
-      --answer-bg: #020617;
     }
 
     * {
@@ -39,32 +38,32 @@
       max-width: 720px;
       background: var(--bg-card);
       border-radius: 16px;
-      padding: 28px;
+      padding: 32px 28px;
       box-shadow: 0 25px 50px rgba(0,0,0,0.6);
       border: 1px solid var(--border);
     }
 
+    /* HEADER */
     .header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 20px;
+      text-align: center;
+      margin-bottom: 28px;
     }
 
     .header img {
-      height: 42px;
+      height: 52px;
+      margin-bottom: 12px;
     }
 
     .header h1 {
-      font-size: 1.3rem;
       margin: 0;
+      font-size: 1.5rem;
       font-weight: 600;
     }
 
     .subtitle {
-      color: var(--text-secondary);
+      margin-top: 6px;
       font-size: 0.9rem;
-      margin-bottom: 24px;
+      color: var(--text-secondary);
     }
 
     textarea {
@@ -115,7 +114,7 @@
     .answer-box {
       margin-top: 24px;
       padding: 16px;
-      background: var(--answer-bg);
+      background: #020617;
       border-radius: 12px;
       border: 1px solid var(--border);
       white-space: pre-wrap;
@@ -129,7 +128,7 @@
     }
 
     footer {
-      margin-top: 18px;
+      margin-top: 20px;
       font-size: 0.75rem;
       color: var(--text-secondary);
       text-align: center;
@@ -137,11 +136,11 @@
 
     @media (max-width: 600px) {
       .container {
-        padding: 20px;
+        padding: 24px 20px;
       }
 
       .header h1 {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
       }
     }
   </style>
@@ -149,16 +148,22 @@
 
 <body>
   <div class="container">
+
+    <!-- HEADER -->
     <div class="header">
       <img src="https://www.cricbattle.com/images/logo.png" alt="Cricbattle Logo">
       <h1>Auction Assist Agent</h1>
+      <div class="subtitle">
+        Ask questions based on auction rules & documentation
+      </div>
     </div>
 
-    <div class="subtitle">
-      Ask questions based on auction rules & documentation.
-    </div>
-
-    <textarea id="question" placeholder="Example: Can I keep 100k as auction budget?&#10;What are the types of auction?"></textarea>
+    <textarea
+      id="question"
+      placeholder="Example:
+Can I keep 100k as auction budget?
+What are the types of auction?">
+    </textarea>
 
     <div class="actions">
       <button onclick="submitQuestion()">Ask</button>
@@ -209,4 +214,3 @@
   </script>
 </body>
 </html>
-
